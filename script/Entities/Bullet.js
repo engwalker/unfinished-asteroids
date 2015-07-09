@@ -57,11 +57,9 @@ ENGINE.Bullet.prototype = {
     app.game.wrap(this);
   },
 
-  render: function() {
-   
-    /*app.layer.fillStyle("#fff").fillRect(this.x - 4, this.y - 4, 8, 8);*/
-    
-    app.layer.drawRegion(app.images.spritesheet, this.sprite, -this.width / 2, -this.height / 2, 1);
+  render: 
+    /* picks region of spritesheet that contains sprite and applies it to coordinates defined by the movement section above */
+    app.layer.drawRegion(app.images.spritesheet, this.sprite, this.x, this.y, 1);
 
   }
 
